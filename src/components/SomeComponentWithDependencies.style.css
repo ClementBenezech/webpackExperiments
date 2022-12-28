@@ -1,0 +1,7 @@
+/* this is a css class used in the component (js file in this folder if you're looking for it) */
+
+.howILook {
+    color:darkgoldenrod;
+    border: 1px solid darkgoldenrod;
+    background: lightgrey;
+}

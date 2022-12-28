@@ -1,4 +1,6 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 // Hey! I'm the webpack configuration file.
@@ -23,9 +25,19 @@ module.exports = {
         // ...how to name it.
         filename: 'main.js',
         // ...Where to put it. 
+        // See how we use path.resolve to generate an absolute Path here. Using a relative path will trigger an error. 
         path: path.resolve(__dirname, 'dist'),
         // ...The mode (TODO)
     },
+
+
+    plugins: [
+        // I use this neat little plugin to generate a index.html file in the Dist Folder, referencing my main.js build.
+        // This way, we can open it in the browser and see the build in action.
+        new HtmlWebpackPlugin(),
+        // This plugin we'll use later, when we want to create a rule that will handle css files separately from JS files
+        new MiniCssExtractPlugin() 
+    ],
 
     // The above configuration is the same as the default webpack configuration.
     // With so little information, webpack will be as clever as an educated potato.
@@ -64,9 +76,31 @@ module.exports = {
                       maxSize: 4 * 1024,
                     },
                 },
+            },
+            {
+                // Here is where i tell webpack how to handle CSS files it finds.
+                test: /\.css$/i,
+                // I'm applying this rule for all CSS files OUTSIDE the src/components directory.
+                exclude: [
+                    path.resolve(__dirname, "components")
+                ],
+                // The css-loader interprets @import and url() like import/require() and will resolve them.
+                // Style-loader will Inject CSS into the js bundle directly.
+                // Notice this is an array of loaders. They will execute FROM LAST TO FIRST.
+                use: ["style-loader", "css-loader"],
+
+            },
+            {
+                // Now, what if I want to have css in a separate bundle file?
+                // Then I'll just use MiniCssExtractPlugin instead of style-loader.
+                // This rule is responsible for the main.css file we have in the dist folder.
+                test: /\.css$/i,
+                // It contains all styles found INSIDE the src/components directory.
+                include: [
+                    path.resolve(__dirname, "components")
+                ],
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             }
         ]
-    }
-    
-    
+    },
 };
