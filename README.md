@@ -18,9 +18,10 @@ Or
 
 npm install.
 
-# How to execute wepback?
+# What's inside this repo?
 
-Just type npx webpack or yarn webpack
+The src folder: contains a JS file (the root of the "app") importing multiple things.
+The asset folder: contains a directory with all source images.
 
 # Where to start?
 
@@ -29,3 +30,15 @@ I would advise that you read the webpack.config.js first.
 It has been thoroughly commented so you understand each option and what it does. 
 
 This should help you understand what webpack does and how we can configure it.
+
+Then
+
+# Execute wepback
+
+Just type npx webpack or yarn webpack
+
+# Check the generated files (The build) in the DIST folder (Only appears if you execute webpack)
+
+You can see how each file is bundled according to the rules defined in webpack.config.js
+
+# Try changing stuff, execute webpack again and see how the build is modified !
