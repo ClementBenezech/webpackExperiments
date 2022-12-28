@@ -1,0 +1,31 @@
+# What is this repo?
+
+This is meant as a resource to help you understand how to use webpack and test its behavior. 
+
+Webpack is a Module bundler: it will kindof "agregate" everything in your project, and generate a "build"
+
+It consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source.
+
+# How to get started
+
+Just clone the repo and then install the necessary packages.
+
+They are referenced in the package.json so you just need to run:
+
+yarn install
+
+Or 
+
+npm install.
+
+# How to execute wepback?
+
+Just type npx webpack or yarn webpack
+
+# Where to start?
+
+I would advise that you read the webpack.config.js first.
+
+It has been thoroughly commented so you understand each option and what it does. 
+
+This should help you understand what webpack does and how we can configure it.
