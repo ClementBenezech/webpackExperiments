@@ -73,33 +73,40 @@ module.exports = {
                 parser: {
                     // This is where we define what size will be the limit between inline / resource asset modes
                     dataUrlCondition: {
-                      maxSize: 4 * 1024,
+                      maxSize: 20 * 1024,
                     },
                 },
             },
             {
-                // Here is where i tell webpack how to handle CSS files it finds.
-                test: /\.css$/i,
-                // I'm applying this rule for all CSS files OUTSIDE the src/components directory.
-                exclude: [
-                    path.resolve(__dirname, "components")
-                ],
-                // The css-loader interprets @import and url() like import/require() and will resolve them.
-                // Style-loader will Inject CSS into the js bundle directly.
-                // Notice this is an array of loaders. They will execute FROM LAST TO FIRST.
-                use: ["style-loader", "css-loader"],
+                // For all CSS files we find anywhere but in the src/components folder.
+                test: /\.css$/,
+                include: [path.resolve(__dirname, 'src/components/')],
 
+                // First We resolve imports in the css files using css-loader.
+                // Then we insert it in style tags in the main.js bundle, using style-loader.
+                use: [
+                    "style-loader", // will exectute after css-loader
+                    "css-loader" // will execute first
+                ],
+                // IMPORTANT: The loaders are executed from last to first in the "use" array.
             },
             {
-                // Now, what if I want to have css in a separate bundle file?
-                // Then I'll just use MiniCssExtractPlugin instead of style-loader.
-                // This rule is responsible for the main.css file we have in the dist folder.
-                test: /\.css$/i,
-                // It contains all styles found INSIDE the src/components directory.
-                include: [
-                    path.resolve(__dirname, "components")
-                ],
-                use: [MiniCssExtractPlugin.loader, "css-loader"],
+                // For all CSS files we find INSIDE the src/components folder.
+                test: /\.css$/,
+                exclude: [path.resolve(__dirname, 'src/components/')],
+
+                // We use MiniCssExtractPlugin to generate styles in a separate file in DIST (not in main.js JS like the example above)
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                            // Also, we use CSS modules option in css-loader to generate unique classnames for each component.
+                            modules: true,
+                        },
+                    },
+            ],
             }
         ]
     },

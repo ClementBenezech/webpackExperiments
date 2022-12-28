@@ -1,3 +1,20 @@
-#body {
+body {
     background: black;
+    display: flex;
+    color: white;
+
+}
+
+.superClass {
+    color: gold;
+}
+
+.card {
+    min-width: 18vw;
+    max-width: 18vw;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 1px solid white;
+    margin: 10px;
 }

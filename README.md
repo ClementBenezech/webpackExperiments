@@ -38,11 +38,11 @@ Then
 
 Just type npx webpack or yarn webpack
 
-# Check the generated files (The build) in the DIST folder (Only appears if you execute webpack)
+Check the generated files (The build) in the DIST folder (Only appears if you execute webpack)
 
 You can see how each file is bundled according to the rules defined in webpack.config.js
 
-# Try changing stuff, execute webpack again and see how the build is modified !
+## Try changing stuff, execute webpack again and see how the build is modified !
 
 
 # Usefull links
@@ -71,6 +71,13 @@ https://webpack.js.org/plugins/mini-css-extract-plugin/#root
 
 To bundle css directly in the main.js bundle file
 
-https://webpack.js.org/loaders/style-loader/#root
+https://webpack.js.org/loaders/style-loader/#rootadd .
+
+### HTML WEBPACK PLUGIN
+
+Creates an index.HTML file pointing to your build. 
+
+https://webpack.js.org/plugins/html-webpack-plugin/#root
+
 
 
