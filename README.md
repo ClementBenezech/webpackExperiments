@@ -21,6 +21,7 @@ npm install.
 # What's inside this repo?
 
 The src folder: contains a JS file (the root of the "app") importing multiple things.
+Also contains a component folder, with (surprise!) some components in it
 The asset folder: contains a directory with all source images.
 
 # Where to start?
@@ -42,3 +43,34 @@ Just type npx webpack or yarn webpack
 You can see how each file is bundled according to the rules defined in webpack.config.js
 
 # Try changing stuff, execute webpack again and see how the build is modified !
+
+
+# Usefull links
+
+## Webpack Plugins
+
+### HTML WEBPACK PLUGIN
+
+To create a index.html page in the build folder
+
+https://webpack.js.org/plugins/html-webpack-plugin/
+
+### CSS LOADER
+
+The css-loader interprets @import and url() like import/require() and will resolve them
+
+https://webpack.js.org/loaders/css-loader/
+
+### MINI CSS EXTRACT PLUGIN
+
+To extract css in a separate main.css file.
+
+https://webpack.js.org/plugins/mini-css-extract-plugin/#root
+
+### STYLE-LOADER
+
+To bundle css directly in the main.js bundle file
+
+https://webpack.js.org/loaders/style-loader/#root
+
+
