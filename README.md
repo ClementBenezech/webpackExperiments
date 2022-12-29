@@ -6,6 +6,18 @@ Webpack is a Module bundler: it will kindof "agregate" everything in your projec
 
 It consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source.
 
+So wether you are using Vanilla JS and simple CSS or react components with css in JS and typescript, Webpack will be able to package it into a webapp that any browser can understand.
+
+Basically, you'll just tell webpack where to start looking for stuff to bundle in you app and from this (entry)point it will find all dependencies and integrate them in your build.
+
+To do so, you'll need to create a Webpack configuration file to define "what to do with what file in what case".
+
+In other words, as stated in the webpack documentation: 
+
+> Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
+
+When webpack processes your application, it starts from a list of modules defined on the command line or in its configuration file. Starting from these entry points, webpack recursively builds a dependency graph that includes every module your application needs, then bundles all of those modules into a small number of bundles - often, only one - to be loaded by the browser.
+
 # How to get started
 
 Just clone the repo and then install the necessary packages.
