@@ -70,7 +70,7 @@ You can see how each file is bundled according to the rules defined in webpack.c
 
 ### Try changing stuff, execute webpack again and see how the build is modified !
 
-### To visualize the build, just open whatever_path_to_your_project/dist/index.html with your browser.
+### To visualize the build as a webpage, and inspect elements, just open whatever_path_to_your_project/dist/index.html with your browser.
 
 
 
