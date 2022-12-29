@@ -1,12 +1,16 @@
 ![Alt text](assets/images/webpack.png?raw=true "Some modules beeing bundled very hard")
 
-# What is this repo?
+# Welcome to webpack for dummies.
 
-This is meant as a resource to help you understand how to use webpack and test its behavior. 
+## Ever wanted to know what the front "build" process is all about?
 
-Webpack is a Module bundler: it will kindof "agregate" everything in your project, and generate a "build"
+I mean, yeah ok, you install packages, you write front end code and shit, it does stuff. 
 
-It consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source.
+But for all this to becom a web application people can actually use on their browser, there needs to be some kind of transformation process.
+
+Webpack is a Module bundler: it will kindof "agregate" everything in your project, and generates a "build", taking into account dependencies between all the modules.
+
+Te build itself consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source (see image above :) )
 
 So wether you are using Vanilla JS and simple CSS or react components with css in JS and typescript, Webpack will be able to package it into a webapp that any browser can understand.
 
@@ -34,7 +38,7 @@ npm install.
 
 ## What's inside this repo?
 
-The src folder: contains a JS file (the root of the "app") importing multiple things.
+The src folder: contains a index file (the root of the "app") importing multiple things.
 Also contains a component folder, with (surprise!) some components in it
 The asset folder: contains a directory with all source images.
 
