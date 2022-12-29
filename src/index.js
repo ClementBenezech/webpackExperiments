@@ -2,8 +2,9 @@ import webpackPng from "../assets/images/index.png";
 import svgImage from "../assets/images/image.svg";
 import inlineGif from "../assets/images/inlineGif.gif";
 import resourceGif from "../assets/images/resourceGif.gif";
-import SomeComponentWithDependencies from "./components/SomeComponentWithDependencies";
-import styles from "./base.css";
+import SomeComponentWithDependencies from "./components/SomeComponentWithDependencies/SomeComponentWithDependencies";
+import "./base.css";
+import SomeModernJSComponent from "./components/SomeModernJSComponent/SomeModernJSComponent";
 
 const someDiv = document.createElement("div");
 const someImg = document.createElement("img");
@@ -16,11 +17,11 @@ anotherImg.src = svgImage;
 tinyGif.src = inlineGif;
 fatGif.src = resourceGif;
 
-someDiv.classList.add(styles.card);
-someImg.classList.add(styles.card);
-anotherImg.classList.add(styles.card);
-tinyGif.classList.add(styles.card);
-fatGif.classList.add(styles.card);
+someDiv.classList.add("card");
+someImg.classList.add("card");
+anotherImg.classList.add("card");
+tinyGif.classList.add("card");
+fatGif.classList.add("card");
 
 someDiv.textContent= "This is just a div with some styling";
 document.getElementsByTagName("body")[0].appendChild(someDiv)
@@ -30,3 +31,4 @@ document.getElementsByTagName("body")[0].appendChild(tinyGif)
 document.getElementsByTagName("body")[0].appendChild(fatGif)
 
 SomeComponentWithDependencies();
+SomeModernJSComponent();

@@ -1,3 +1,5 @@
+![Alt text](assets/images/index.png?raw=true "Title")
+
 # What is this repo?
 
 This is meant as a resource to help you understand how to use webpack and test its behavior. 
@@ -93,6 +95,26 @@ https://webpack.js.org/loaders/style-loader/#rootadd .
 Creates an index.HTML file pointing to your build. 
 
 https://webpack.js.org/plugins/html-webpack-plugin/#root
+
+### BABEL LOADER
+
+Will translate whatever modern JS syntax into old JS any browser can understand
+
+https://webpack.js.org/loaders/babel-loader/
+
+Documentation on how to specify output.environment to define the behavior of babel loader
+
+https://webpack.js.org/configuration/output/#outputenvironment 
+
+
+## Other Stuff:
+
+### Babel Documentation
+
+https://babeljs.io/docs/en/
+
+
+
 
 
 

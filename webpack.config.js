@@ -27,7 +27,10 @@ module.exports = {
         // ...Where to put it. 
         // See how we use path.resolve to generate an absolute Path here. Using a relative path will trigger an error. 
         path: path.resolve(__dirname, 'dist'),
-        // ...The mode (TODO)
+        // Here I'm telling webpack that the build will have to work in environments not understanding arrow functions
+        environment: {
+            arrowFunction: false,
+        }
     },
 
 
@@ -80,12 +83,12 @@ module.exports = {
             {
                 // For all CSS files we find anywhere but in the src/components folder.
                 test: /\.css$/,
-                include: [path.resolve(__dirname, 'src/components/')],
+                exclude: [path.resolve(__dirname, 'src/components/')],
 
                 // First We resolve imports in the css files using css-loader.
                 // Then we insert it in style tags in the main.js bundle, using style-loader.
                 use: [
-                    "style-loader", // will exectute after css-loader
+                    "style-loader", // will execute after css-loader
                     "css-loader" // will execute first
                 ],
                 // IMPORTANT: The loaders are executed from last to first in the "use" array.
@@ -93,7 +96,7 @@ module.exports = {
             {
                 // For all CSS files we find INSIDE the src/components folder.
                 test: /\.css$/,
-                exclude: [path.resolve(__dirname, 'src/components/')],
+                include: [path.resolve(__dirname, 'src/components/')],
 
                 // We use MiniCssExtractPlugin to generate styles in a separate file in DIST (not in main.js JS like the example above)
                 use: [
@@ -107,7 +110,24 @@ module.exports = {
                         },
                     },
             ],
-            }
+            },
+            {
+                // Now here, i'm doin something a little bit different and using Babel loader, I tell webpack to "translate" modern JS syntaxes it finds in the code
+                // Into "Old school JS" any browser can understand.
+                // In the output.environment section above (line 31-ish), I specified that the build should work on JS engines that do not undestand arrow functions.
+                // If you look in the main.js file in the dist folder, you'll see all ()=>{doSomething} became function(){doSomething}
+                // Change the environment.arrowFunctions property to true, exectue webpack again, you'll see arrow functions coming back in the build :-)
+                
+                    test: /\.m?js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                      loader: 'babel-loader',
+                      options: {
+                        presets: ['@babel/preset-env']
+                      }
+                    }
+              }
+           
         ]
     },
 };

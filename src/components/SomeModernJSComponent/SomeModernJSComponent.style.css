@@ -1,0 +1,8 @@
+/* This class has the same name as a class used in another component.
+But you'll see they will have different names in the css export, thanks to the use of css modules */
+
+.howILook {
+    color:darkgoldenrod;
+    border: 1px solid darkolivegreen;
+    background: lightgrey;
+}
