@@ -77,6 +77,12 @@ You can see how each file is bundled according to the rules defined in webpack.c
 
 # Usefull links
 
+## Asset modules
+
+Allows you to use asset files (fonts, icons, etc) without configuring additional loaders.
+
+https://webpack.js.org/guides/asset-modules/
+
 
 ## Webpack Plugins
 
