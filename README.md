@@ -1,4 +1,4 @@
-![Alt text](assets/images/index.png?raw=true "Title")
+![Alt text](assets/images/webpack.png?raw=true "Some modules beeing bundled very hard")
 
 # What is this repo?
 
