@@ -8,11 +8,11 @@ I mean, yeah ok, you install packages, you write front end code and shit, it doe
 
 But for all this to become a web application people can actually use on their browser, there needs to be some kind of transformation process.
 
-Webpack is a Module bundler: it will kindof "agregate" everything in your project, and generates a "build", taking into account dependencies between all the modules.
+Webpack is a Module bundler: it will, kind of, "aggregate" everything in your project, and generates a "build", taking into account dependencies between all the modules.
 
-Te build itself consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source.
+The build itself consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source.
 
-So wether you are using Vanilla JS and simple CSS or react components with css in JS and typescript, Webpack will be able to package it into a webapp that any browser can understand.
+So wether you are using Vanilla JS and simple CSS, or react components with css in JS and typescript, Webpack will be able to package it into a webapp that any browser can understand.
 
 In other words, as stated in the webpack documentation: 
 
@@ -24,11 +24,15 @@ In other words, as stated in the webpack documentation:
 
 Basically, you'll just tell webpack where to start looking for stuff to bundle in you app and from this (entry)point it will find all dependencies and integrate them in your build.
 
-To do so, you'll need to create a Webpack configuration file to define "what to do with what file in what case".
+To do so, we'll need to create a Webpack configuration file to define "what to do with what file in what case".
+
+And with the help of this repository and the EXTENSIVELY commented webpack configuration file, you can understand, and see for yourself how this all falls into place. 
 
 ## How to get started
 
-Just clone the repo and then install the necessary packages.
+### First, of course, you'll need to have node.js installed. You can get it here: https://nodejs.org/en/
+
+Then just clone the repo and then install the necessary packages.
 
 They are referenced in the package.json so you just need to run:
 
