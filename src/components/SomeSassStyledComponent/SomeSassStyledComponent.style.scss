@@ -1,0 +1,16 @@
+/* This class uses sass variables to set a color and width on the element. sass-loader will take care of it */
+
+$element-color: #c6538c;
+$element-size: 18%;
+
+.howILook {
+    color:$element-color;
+    border: 5px solid $element-color;
+    background: white;
+    width: $element-size;
+    margin: 10px;
+    text-align:center;
+    padding: 20px;
+    font-size: 50px;
+    border-radius: 12px;
+}

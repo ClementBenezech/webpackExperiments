@@ -2,7 +2,11 @@
 But you'll see they will have different names in the css export, thanks to the use of css modules */
 
 .howILook {
-    color:darkgoldenrod;
-    border: 1px solid darkolivegreen;
-    background: lightgrey;
+    color:lightcoral;
+    border: 1px solid rgb(47, 107, 79);
+    background: none;
+    width: 18%;
+    margin: 10px;
+    font-size: 26px;
+    padding: 20px;
 }

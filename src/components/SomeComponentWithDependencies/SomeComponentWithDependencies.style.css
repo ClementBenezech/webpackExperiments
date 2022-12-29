@@ -1,7 +1,11 @@
 /* this is a css class used in the SomeComponentWithDependencies component (js file in this folder if you're looking for it) */
 
 .howILook {
-    color:darkgoldenrod;
+    color: lightblue;
     border: 1px solid darkgoldenrod;
-    background: lightgrey;
+    background: none;
+    width: 18%;
+    margin: 10px;
+    font-size: 26px;
+    text-align: center;
 }

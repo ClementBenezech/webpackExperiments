@@ -1,4 +1,4 @@
-![Alt text](assets/images/webpack.png?raw=true "Some modules beeing bundled very hard")
+![Alt text](assets/images/cover.png?raw=true "rendered build image")
 
 # Welcome to webpack for dummies.
 
@@ -6,11 +6,11 @@
 
 I mean, yeah ok, you install packages, you write front end code and shit, it does stuff. 
 
-But for all this to becom a web application people can actually use on their browser, there needs to be some kind of transformation process.
+But for all this to become a web application people can actually use on their browser, there needs to be some kind of transformation process.
 
 Webpack is a Module bundler: it will kindof "agregate" everything in your project, and generates a "build", taking into account dependencies between all the modules.
 
-Te build itself consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source (see image above :) )
+Te build itself consists of one or multiple files containing optimized JS, styles, images etc, generated from you project source.
 
 So wether you are using Vanilla JS and simple CSS or react components with css in JS and typescript, Webpack will be able to package it into a webapp that any browser can understand.
 
@@ -19,6 +19,8 @@ In other words, as stated in the webpack documentation:
 > Any time one file depends on another, webpack treats this as a dependency. This allows webpack to take non-code assets, such as images or web fonts, and also provide them as dependencies for your application.
 
 > When webpack processes your application, it starts from a list of modules defined on the command line or in its configuration file. Starting from these entry points, webpack recursively builds a dependency graph that includes every module your application needs, then bundles all of those modules into a small number of bundles - often, only one - to be loaded by the browser.
+
+![Alt text](assets/images/webpack.png?raw=true "Some modules beeing bundled very hard")
 
 Basically, you'll just tell webpack where to start looking for stuff to bundle in you app and from this (entry)point it will find all dependencies and integrate them in your build.
 
@@ -39,7 +41,9 @@ npm install.
 ## What's inside this repo?
 
 The src folder: contains a index file (the root of the "app") importing multiple things.
-Also contains a component folder, with (surprise!) some components in it
+
+Also contains a component folder, with (surprise!) some components in it.
+
 The asset folder: contains a directory with all source images.
 
 ## Where to start?
@@ -93,6 +97,18 @@ https://webpack.js.org/plugins/mini-css-extract-plugin/#root
 To bundle css directly in the main.js bundle file
 
 https://webpack.js.org/loaders/style-loader/#rootadd .
+
+### SASS LOADER
+
+To transform scss files content into regular css.
+
+https://webpack.js.org/loaders/sass-loader/
+
+### Css Minimizer
+
+To make the css file tiny.
+
+https://webpack.js.org/plugins/css-minimizer-webpack-plugin/
 
 ### HTML WEBPACK PLUGIN
 

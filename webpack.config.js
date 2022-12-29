@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 
 // Hey! I'm the webpack configuration file.
@@ -112,6 +113,26 @@ module.exports = {
             ],
             },
             {
+                // Okay now, maybe i've got scss files (a css preprocessor) and I want their content to be in the main.css output file as well?
+                // Then i just duplicate the above "use" section, and add sass loader at the end of the "use" array here.  
+                test: /\.s[ac]ss$/i,
+                use: [
+                  // Creates `style` nodes from JS strings
+                  MiniCssExtractPlugin.loader,
+                  // Translates CSS into CommonJS
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                            // Also, we use CSS modules option in css-loader to generate unique classnames for each component.
+                            modules: true,
+                        },
+                    },
+                  // Compiles Sass to CSS
+                  "sass-loader",
+                ],
+              },
+            {
                 // Now here, i'm doin something a little bit different and using Babel loader, I tell webpack to "translate" modern JS syntaxes it finds in the code
                 // Into "Old school JS" any browser can understand.
                 // In the output.environment section above (line 31-ish), I specified that the build should work on JS engines that do not undestand arrow functions.
@@ -130,4 +151,12 @@ module.exports = {
            
         ]
     },
+    // Now here, we're just going to minimize the main.css output file, because by default it is not.
+    // We use a plugin, cssMinimizerPlugin
+    // And we add minimize = true or else it would not minimize in development mode.
+    // Try to remove this option and run webpack again, see the difference in main.css? :)
+    optimization : {
+        minimizer: [ new CssMinimizerPlugin() ],
+        minimize: true
+    }
 };

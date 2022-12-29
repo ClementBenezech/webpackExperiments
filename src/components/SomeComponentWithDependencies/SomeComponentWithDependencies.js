@@ -6,7 +6,7 @@ import styles from "./SomeComponentWithDependencies.style.css";
 const SomeComponentWithDependencies = () => {
         const SomeRandomDiv = document.createElement("div");
         SomeRandomDiv.classList.add(styles.howILook);
-        SomeRandomDiv.textContent = "Yay I'm pretty";
+        SomeRandomDiv.textContent = "I'm styled by standard css, and my classNames are unique thanks to css modules! (Inspect me! )";
         document.getElementsByTagName("body")[0].appendChild(SomeRandomDiv);
     }
 

@@ -2,7 +2,8 @@ body {
     background: black;
     display: flex;
     color: white;
-
+    flex-wrap: wrap;
+    font-family: 'Courier New', monospace;
 }
 
 .superClass {
@@ -10,11 +11,27 @@ body {
 }
 
 .card {
-    min-width: 18vw;
-    max-width: 18vw;
+    min-width: 15vw;
+    max-width: 15vw;
     display: flex;
     justify-content: center;
     align-items:center;
     border: 1px solid white;
     margin: 10px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.title {
+    width: 90vw;
+    color: white;
+    font-size: 100px;
+    padding: 50px;
+}
+
+.subTitle {
+    width: 90vw;
+    color: rgb(0, 153, 255);
+    font-size: 80px;
+    padding: 50px;
 }
